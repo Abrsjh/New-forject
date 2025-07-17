@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import Sidebar from './Sidebar'
@@ -20,6 +20,10 @@ vi.mock('react-router-dom', async () => {
 })
 
 describe('Sidebar Component', () => {
+  const mockSetActiveChannel = vi.fn()
+  const mockSetSearchQuery = vi.fn()
+  const mockToggleSidebar = vi.fn()
+  
   const mockChannels = [
     { id: 'general', name: 'General', description: 'General discussion', type: 'public', createdAt: new Date(), memberCount: 5 },
     { id: 'tech', name: 'Tech Talk', description: 'Technical discussions', type: 'public', createdAt: new Date(), memberCount: 3 },
@@ -32,9 +36,9 @@ describe('Sidebar Component', () => {
     activeChannelId: 'general',
     searchQuery: '',
     sidebarOpen: true,
-    setActiveChannel: vi.fn(),
-    setSearchQuery: vi.fn(),
-    toggleSidebar: vi.fn(),
+    setActiveChannel: mockSetActiveChannel,
+    setSearchQuery: mockSetSearchQuery,
+    toggleSidebar: mockToggleSidebar,
     getFilteredChannels: vi.fn(() => mockChannels)
   }
 

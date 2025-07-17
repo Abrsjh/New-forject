@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { useAppStore } from './useAppStore'
-import { mockChannels, mockMessages, mockUsers } from '../data/mockData'
+import { mockChannels, mockMessages } from '../data/mockData'
 
 // Mock localStorage
 const localStorageMock = {

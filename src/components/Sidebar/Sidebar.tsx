@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
     channels,
     activeChannelId,
     searchQuery,
-    sidebarOpen,
+    // sidebarOpen,
     setActiveChannel,
     setSearchQuery,
     toggleSidebar,

@@ -8,7 +8,6 @@ import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner'
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 import { 
   setupGlobalErrorHandling, 
-  createErrorHandler, 
   logError, 
   ErrorSeverity,
   AppError,

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
 import { Hash, Lock, Users, MessageSquare } from 'lucide-react'
-import { formatDistanceToNow } from 'date-fns'
+// import { formatDistanceToNow } from 'date-fns'
 import { useAppStore } from '../../stores/useAppStore'
 import { getUserById } from '../../data/mockData'
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
@@ -10,7 +10,6 @@ import {
   shouldAutoScroll, 
   performAutoScroll,
   saveScrollPosition,
-  restoreScrollPosition,
   debounceScroll,
   type MessageItem,
   type DateSeparator,
@@ -23,7 +22,7 @@ import MessageComposer from '../MessageComposer/MessageComposer'
 const MessageView: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const [savedScrollPosition, setSavedScrollPosition] = useState<ScrollPosition | null>(null)
+  // const [savedScrollPosition, setSavedScrollPosition] = useState<ScrollPosition | null>(null)
   const [autoScrollEnabled, setAutoScrollEnabled] = useState(true)
   const [showDetailedTimestamps, setShowDetailedTimestamps] = useState(false)
   
@@ -60,8 +59,8 @@ const MessageView: React.FC = () => {
   useEffect(() => {
     if (scrollContainerRef.current) {
       // Save current position when changing channels
-      const currentPosition = saveScrollPosition(scrollContainerRef.current)
-      setSavedScrollPosition(currentPosition)
+      saveScrollPosition(scrollContainerRef.current)
+      // setSavedScrollPosition(currentPosition)
       
       // Reset auto-scroll for new channel
       setAutoScrollEnabled(true)

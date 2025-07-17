@@ -74,6 +74,7 @@ const MessageComposer: React.FC<MessageComposerProps> = ({ channelId, disabled =
 
     // Add message to store (using current user - in a real app this would come from auth)
     addMessage(channelId, {
+      channelId,
       userId: 'current-user', // This would be the authenticated user's ID
       content: trimmedMessage,
       type: 'text'

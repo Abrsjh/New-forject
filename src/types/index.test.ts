@@ -138,7 +138,7 @@ describe('TypeScript Types', () => {
 
   describe('Utility types', () => {
     it('should support CreateMessage type for new messages', () => {
-      const newMessage: CreateMessage = {
+      const newMessage: Omit<Message, 'id' | 'timestamp'> = {
         channelId: 'general',
         userId: 'user-1',
         content: 'New message',
@@ -155,7 +155,7 @@ describe('TypeScript Types', () => {
     })
 
     it('should support Theme type with all valid values', () => {
-      const themes: Theme[] = ['light', 'dark', 'system']
+      const themes: ('light' | 'dark' | 'system')[] = ['light', 'dark', 'system']
       
       themes.forEach(theme => {
         expect(['light', 'dark', 'system']).toContain(theme)

@@ -57,6 +57,11 @@ export interface AppState {
   setSearchQuery: (query: string) => void
   toggleSidebar: () => void
   clearError: () => void
+  setLoading?: (isLoading: boolean) => void
+  setError?: (error: string) => void
+  initializeStore?: () => void
+  loadMockData?: () => void
+  resetStore?: () => void
   
   // Computed getters
   getChannelMessages: (channelId: string) => Message[]

@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import userEvent from '@testing-library/user-event'
 import MessageComposer from './MessageComposer'
@@ -9,13 +9,13 @@ vi.mock('../../stores/useAppStore')
 const mockUseAppStore = vi.mocked(useAppStore)
 
 // Mock current user for testing
-const mockCurrentUser = {
-  id: 'current-user',
-  name: 'Current User',
-  avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=current',
-  status: 'online' as const,
-  email: 'current@example.com'
-}
+// const mockCurrentUser = {
+//   id: 'current-user',
+//   name: 'Current User',
+//   avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=current',
+//   status: 'online' as const,
+//   email: 'current@example.com'
+// }
 
 describe('MessageComposer', () => {
   const mockAddMessage = vi.fn()
