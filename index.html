@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>OpenBoard - Group Discussion Platform</title>
+    <meta name="title" content="OpenBoard - Group Discussion Platform" />
+    <meta name="description" content="A modern, responsive group discussion platform with real-time messaging, channel organization, and dark/light theme support." />
+    <meta name="keywords" content="chat, messaging, discussion, channels, team communication, slack alternative" />
+    <meta name="author" content="OpenBoard Team" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="OpenBoard - Group Discussion Platform" />
+    <meta property="og:description" content="A modern, responsive group discussion platform with real-time messaging, channel organization, and dark/light theme support." />
+    <meta property="og:site_name" content="OpenBoard" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="OpenBoard - Group Discussion Platform" />
+    <meta property="twitter:description" content="A modern, responsive group discussion platform with real-time messaging, channel organization, and dark/light theme support." />
+    
+    <!-- Performance Optimizations -->
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    
+    <!-- PWA Support -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="OpenBoard" />
+    
+    <!-- Preload critical resources -->
+    <link rel="modulepreload" href="/src/main.tsx" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: system-ui, sans-serif;">
+        <h1>OpenBoard</h1>
+        <p>This application requires JavaScript to run. Please enable JavaScript in your browser.</p>
+      </div>
+    </noscript>
+  </body>
+</html>
