@@ -13,7 +13,6 @@ import {
   debounceScroll,
   type MessageItem,
   type DateSeparator,
-  type ScrollPosition
 } from '../../utils/timestampUtils'
 import type { Message, Channel } from '../../types'
 
@@ -133,7 +132,7 @@ const MessageView: React.FC = () => {
     )
   }
 
-  const renderMessage = (message: Message, index: number, isGrouped: boolean) => {
+  const renderMessage = (message: Message, _index: number, isGrouped: boolean) => {
     const user = getUserById(message.userId)
     const isSystem = message.type === 'system'
 
@@ -223,7 +222,7 @@ const MessageView: React.FC = () => {
     )
   }
 
-  const renderMessageItem = (item: MessageItem, index: number) => {
+  const renderMessageItem = (item: MessageItem, _index: number) => {
     if (typeof item === 'object' && 'type' in item && item.type === 'date-separator') {
       return renderDateSeparator(item)
     }

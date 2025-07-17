@@ -192,7 +192,7 @@ export const useAppStore = create<AppState>()(
 )
 
 // Initialize store on module load
-useAppStore.getState().initializeStore()
+useAppStore.getState().initializeStore?.()
 
 // Auto-load mock data (in a real app, this would be replaced with API calls)
-useAppStore.getState().loadMockData()
+useAppStore.getState().loadMockData?.()

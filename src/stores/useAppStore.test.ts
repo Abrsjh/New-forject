@@ -51,7 +51,7 @@ describe('useAppStore', () => {
       
       // Re-initialize store
       const { initializeStore } = useAppStore.getState()
-      initializeStore()
+      initializeStore?.()
       
       expect(localStorageMock.getItem).toHaveBeenCalledWith('openboard-theme')
       expect(useAppStore.getState().theme).toBe('dark')
@@ -61,7 +61,7 @@ describe('useAppStore', () => {
       localStorageMock.getItem.mockReturnValue('invalid-theme')
       
       const { initializeStore } = useAppStore.getState()
-      initializeStore()
+      initializeStore?.()
       
       expect(useAppStore.getState().theme).toBe('light') // fallback to default
     })
@@ -90,7 +90,7 @@ describe('useAppStore', () => {
     it('should load mock data correctly', () => {
       const { loadMockData } = useAppStore.getState()
       
-      loadMockData()
+      loadMockData?.()
       
       const state = useAppStore.getState()
       expect(state.channels).toHaveLength(mockChannels.length)
@@ -102,7 +102,7 @@ describe('useAppStore', () => {
   describe('Message management', () => {
     beforeEach(() => {
       // Load mock data for message tests
-      useAppStore.getState().loadMockData()
+      useAppStore.getState().loadMockData?.()
     })
 
     it('should add new message to channel', () => {
@@ -228,17 +228,17 @@ describe('useAppStore', () => {
     it('should set loading state', () => {
       const { setLoading } = useAppStore.getState()
       
-      setLoading(true)
+      setLoading?.(true)
       expect(useAppStore.getState().isLoading).toBe(true)
       
-      setLoading(false)
+      setLoading?.(false)
       expect(useAppStore.getState().isLoading).toBe(false)
     })
 
     it('should set error state', () => {
       const { setError } = useAppStore.getState()
       
-      setError('Test error message')
+      setError?.('Test error message')
       
       expect(useAppStore.getState().error).toBe('Test error message')
     })
@@ -246,7 +246,7 @@ describe('useAppStore', () => {
 
   describe('Computed getters', () => {
     beforeEach(() => {
-      useAppStore.getState().loadMockData()
+      useAppStore.getState().loadMockData?.()
     })
 
     it('should get channel messages', () => {
@@ -305,7 +305,7 @@ describe('useAppStore', () => {
       
       const { initializeStore } = useAppStore.getState()
       
-      expect(() => initializeStore()).not.toThrow()
+      expect(() => initializeStore?.()).not.toThrow()
       expect(useAppStore.getState().theme).toBe('light') // Should use default
     })
   })

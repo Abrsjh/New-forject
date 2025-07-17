@@ -105,8 +105,8 @@ const AppContent: React.FC = () => {
   // Initialize app on mount
   useEffect(() => {
     try {
-      initializeStore()
-      loadMockData()
+      initializeStore?.()
+      loadMockData?.()
     } catch (err) {
       const appError = new AppError(
         'Failed to initialize application',
